@@ -1,5 +1,5 @@
 import "../styles/bookmark.css";
-
+import {Link} from "react-router-dom";
 
 const Bookmarks= ({darkMode, onClick}) => {
     return(
@@ -9,7 +9,7 @@ const Bookmarks= ({darkMode, onClick}) => {
                 {darkMode ? "Dark Mode"  : "Light Mode"}
             </button>
             <ul>
-                <li>Bookmarks</li>
+                <li><Link to="/FormPage">Bookmarks</Link></li>
                 <li><a href="#">Youtube</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Profiles</a></li>
