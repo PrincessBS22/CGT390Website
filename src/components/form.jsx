@@ -1,11 +1,11 @@
 import { useState } from 'react'
 
 const Form = () => {
-    const [data, setData] = useState({ company: "", date: "", article: "", description: "", linky: "", image: null });
+    const [data, setData] = useState({ company: "", dates: "", article: "", descriptions: "", linky: "", image: null });
     const [descLength, setDescLength] = useState(0);
     const [error, setError] = useState({ image: "", general: "" });
     const [submited, setSubmited] = useState(false);
-    const [sucessM, setSucessM] = useState("");
+    const [successM, setSuccessM] = useState("");
 
 
     const handleFileChange = (e) => {
@@ -23,34 +23,35 @@ const Form = () => {
 
         const formData = new FormData(e.target);
         const company = e.target.company.value;
-        const date = e.target.date.value;
+        const dates = e.target.dates.value;
         const article = e.target.article.value;
         const linky = e.target.linky.value;
-        const description = e.target.description.value;
+        const descriptions = e.target.descriptions.value;
         const image = e.target.image.files[0];
         formData.set("company", company.trim());
-        formData.set("date", date.trim());
-        formData.set("link", link.trim());
+        formData.set("dates", dates.trim());
+        formData.set("linky", linky.trim());
         formData.set("article", article.trim());
-        formData.set("description", description.trim());
-        // if (data.image) formData.set("image", image);
+        formData.set("descriptions", descriptions.trim());
+        if (data.image) formData.set("image", image);
         //console.log(data.image+"test");
         try {
-            const response = await fetch("https://web.ics.purdue.edu/~shaverb/personal-website/send-data.php", {
+            const response = await fetch("https://web.ics.purdue.edu/~shaverb/personal-website/send-data1.php", {
                 method: "POST",
                 body: formData,
             });
             const result = await response.json();
-            if (result.sucess) {
+            if (result.success) {
                 e.target.reset();
                 setError({ image: "", general: "" });
                 setTimeout(() => {
-                    setSucessM("Data Submitted Sucessfully.");
+                    setSuccessM("Data Submitted Sucessfully.");
                 }, 2500);
             }
             else {
+
                 setError({ image: "", general: result.message });
-                setSucessM("");
+                setSuccessM("");
             }
         }
         catch (error) {
@@ -64,11 +65,11 @@ const Form = () => {
     return (
         <form id="website-form" onSubmit={handleSubmit} className="profile-form">
             <input type="text" name="company" placeholder="Company" required />
-            <input type="date" name="date" />
+            <input type="date" name="dates" />
             <input type="text" name="article" placeholder="Article" required />
-            <input type="url" name="linky" placeholder="Link" required />
-            <textarea name="description" placeholder="Description" required maxLength="200" onChange={(e) => setDescLength(e.target.value.length)} /><p>{descLength}/200</p>
-            <label htmlFor="image">Choose a profile picture:</label>
+            <input type="text" name="linky" placeholder="Link" required />
+            <textarea name="descriptions" placeholder="Description" required maxLength="200" onChange={(e) => setDescLength(e.target.value.length)} /><p>{descLength}/200</p>
+            <label htmlFor="image">Choose an icon:</label>
             <input type="file" id="image" name="image" accept="image/jpg, image/jpeg, image/png, image/gif" onChange={handleFileChange} />
             {error.image && <p>{error.image}</p>}
             {/* You might not believe this, but the web browser will auto disable a submit button IF a required element is not filled. :) */}

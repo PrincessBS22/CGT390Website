@@ -13,3 +13,7 @@ Okay, so we have some important decisions to make regarding how to interact with
 - Add a profile
     - 
 - 
+
+-connect to database through php
+-create searchbar
+-display sites
