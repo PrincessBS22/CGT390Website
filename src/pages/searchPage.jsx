@@ -49,7 +49,7 @@ const SearchPage = () => {
     <Wrapper>
       <div className="filter-wrapper">
         <div className="filter-search">
-          <label htmlFor="search">Search</label>
+          <label htmlFor="search">Search </label>
           <input type="search" id="search" onChange={handleSearchChange} value={search} />
           <button className="button" onClick={handleClear}>
             <FontAwesomeIcon icon={faTimes} />
