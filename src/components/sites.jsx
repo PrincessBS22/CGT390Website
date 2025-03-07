@@ -9,8 +9,8 @@ const Sites = ({ image_url, company, dates, article, descriptions, linky }) => {
                 {image_url ? <img src={image_url} alt={company} /> : <></>}
             </div>
             <div className="card-body">
-                <h2><a href={linky}>{article}</a></h2>
-                <h3>&emsp;&emsp;{company} {dates}</h3>
+                <a href={linky}><h2>{article}</h2>
+                <h3>&emsp;&emsp;{company} {dates}</h3></a>
                 <p>{descriptions}</p>
             </div>
         </div>

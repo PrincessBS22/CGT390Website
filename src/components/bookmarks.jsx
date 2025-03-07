@@ -4,12 +4,16 @@ import {Link} from "react-router-dom";
 const Bookmarks= () => {
     return(
         <nav className="Bookmarks">
+                
             
-            <ul>
-                <li><Link to="/FormPage">Bookmarks</Link></li>
-                <li><a href="#">Youtube</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Profiles</a></li>
+            <ul className="links">
+                <li><h2 className="title"><Link to="/FormPage">Bookmarks</Link></h2></li>
+                <li></li>
+                <li><a href="https://www.youtube.com/">Youtube</a></li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+                <li><a href="https://web.whatsapp.com/">WhatsApp</a></li>
+                <li><a href="https://chatgpt.com/">ChatGPT</a></li>
+                <li><a href="https://www.coolmathgames.com/">Coolmath Games</a></li>
             </ul>
             
         </nav>

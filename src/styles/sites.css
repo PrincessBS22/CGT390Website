@@ -1,5 +1,6 @@
 .filter-wrapper{
     margin:2%;
+    width:100%;
 }
 .button{
     float:none;
@@ -9,10 +10,14 @@
     width:95%;
     background-color:cadetblue;
     color:black;
-    padding:.5%;
+    padding:1%;
+    padding-left:1.5%;
     margin:1%;
     text-align: left;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid black;
 }
 img{
     max-width: 4%;
