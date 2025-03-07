@@ -51,7 +51,7 @@ const SearchPage = () => {
         <div className="filter-search">
           <label htmlFor="search">Search</label>
           <input type="search" id="search" onChange={handleSearchChange} value={search} />
-          <button onClick={handleClear}>
+          <button className="button" onClick={handleClear}>
             <FontAwesomeIcon icon={faTimes} />
           </button>
         </div>

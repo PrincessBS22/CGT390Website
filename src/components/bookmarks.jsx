@@ -1,13 +1,10 @@
 import "../styles/bookmark.css";
 import {Link} from "react-router-dom";
 
-const Bookmarks= ({darkMode, onClick}) => {
+const Bookmarks= () => {
     return(
         <nav className="Bookmarks">
             
-            <button onClick={onClick}>
-                {darkMode ? "Dark Mode"  : "Light Mode"}
-            </button>
             <ul>
                 <li><Link to="/FormPage">Bookmarks</Link></li>
                 <li><a href="#">Youtube</a></li>

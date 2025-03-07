@@ -1,7 +1,16 @@
 #root{
-    padding: 5px;
+    padding:0px;
     margin:0px;
+    width:100%;
+}
+:root{
+    width:100%;
 }
 body{
-    display:contents;
+    display:block;
+    width:100%
+}
+.corpse{
+    padding:0px;
+    margin:0px;
 }

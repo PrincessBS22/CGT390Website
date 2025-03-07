@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useState } from 'react';
+import "../styles/form.css";
 
 const Form = () => {
     const [data, setData] = useState({ company: "", dates: "", article: "", descriptions: "", linky: "", image: null });
@@ -63,7 +64,7 @@ const Form = () => {
     }
 
     return (
-        <form id="website-form" onSubmit={handleSubmit} className="profile-form">
+        <form id="website-form" onSubmit={handleSubmit} className="site-form">
             <input type="text" name="company" placeholder="Company" required />
             <input type="date" name="dates" />
             <input type="text" name="article" placeholder="Article" required />
